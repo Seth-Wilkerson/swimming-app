@@ -19,25 +19,25 @@
   
    <style>
 
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
     }
     
-    /* Add a gray background color and some padding to the footer */
+   
     footer {
       background-color: #f2f2f2;
       padding: 25px;
     }
     
   .carousel-inner img {
-      width: 100%; /* Set width to 100% */
+      width: 100%; 
       margin: auto;
       max-height:200px;
   }
 
-  /* Hide the carousel text when the screen is less than 600 pixels wide */
+
   @media (max-width: 600px) {
     .carousel-caption {
       display: none; 
@@ -47,6 +47,9 @@
 </head>
 <body>
 
+<!-- 
+Navigation bar for top of site
+ -->
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -61,7 +64,7 @@
       <ul class="nav navbar-nav">
         <li><a href="${pageContext.request.contextPath}/customer/register">Register</a></li>
         <li><a href="${pageContext.request.contextPath}/customer/signin">Sign in</a></li>
-        <li><a href="${pageContext.request.contextPath}/customer/gwork">Generate Workout</a></li>
+        <li><a href="${pageContext.request.contextPath}/customer/gwork">Generate Set</a></li>
         <li><a href="${pageContext.request.contextPath}/customer/list">Users</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -71,7 +74,9 @@
   </div>
 </nav>
 
-
+<!-- 
+Site Info title and form
+ -->
 	<div style="margin-left: 25%; margin-right: 25%; margin-top: 15%;">
     <div id="wrapper">
 		<div id="header">
@@ -84,7 +89,7 @@
 	
 		<form:form action="saveWorkout" modelAttribute="work" method="POST">
 
-			<!-- need to associate this data with customer id -->
+			
 			<form:hidden path="id" />
 					
 			<table>

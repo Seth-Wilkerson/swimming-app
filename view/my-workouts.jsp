@@ -18,25 +18,25 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   
    <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
     }
     
-    /* Add a gray background color and some padding to the footer */
+    
     footer {
       background-color: #f2f2f2;
       padding: 25px;
     }
     
   .carousel-inner img {
-      width: 100%; /* Set width to 100% */
+      width: 100%; 
       margin: auto;
       max-height:200px;
   }
 
-  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  
   @media (max-width: 600px) {
     .carousel-caption {
       display: none; 
@@ -46,6 +46,10 @@
 </head>
 <body>
 
+
+<!-- 
+Navigation bar for top of site
+ -->
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -60,7 +64,7 @@
       <ul class="nav navbar-nav">
         <li><a href="${pageContext.request.contextPath}/customer/register">Register</a></li>
         <li><a href="${pageContext.request.contextPath}/customer/signin">Sign in</a></li>
-        <li><a href="${pageContext.request.contextPath}/customer/gwork">Generate Workout</a></li>
+        <li><a href="${pageContext.request.contextPath}/customer/gwork">Generate Set</a></li>
         <li><a href="${pageContext.request.contextPath}/customer/list">Users</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -70,6 +74,9 @@
   </div>
 </nav>
 
+<!-- 
+Site info and form
+ -->
 <div style="margin-left: 25%; margin-right: 25%; margin-top: 5%;"> 
 
       <div id="wrapper">
@@ -84,19 +91,19 @@
           
                 	<c:forEach var="tempCustomer" items="${workout}">
                 	
-             		<!-- construct an "update" link with customer id -->
+             		
 					<c:url var="updateLink" value="/customer/showFormForUpdateW">
 						<c:param name="customerId" value="${tempCustomer.id}" />
 					</c:url>					
 
-					<!-- construct an "delete" link with customer id -->
+					
 					<c:url var="deleteLink" value="/customer/deleteW">
 						<c:param name="customerId" value="${tempCustomer.id}" />
 					</c:url>	
                     <div class="list-item" data-id="19">
                         <div><a href="#" data-abc="true"><span class="w-48 avatar gd-warning">${tempCustomer.id}</span></a></div>
-                        <div class="flex"> <a href="#" class="item-author text-color" data-abc="true">Warm-up: ${tempCustomer.firstName} Main-set: ${tempCustomer.lastName}</a>
-                            <div class="item-except text-muted text-sm h-1x">Cool-down: ${tempCustomer.email}</div>
+                        <div class="flex"> <a href="#" class="item-author text-color" data-abc="true">Warm-up: ${tempCustomer.firstName} - Main-set: ${tempCustomer.lastName} - Cool-down: ${tempCustomer.email}</a>
+                            <div class="item-except text-sm h-1x"></div>
                         </div>
                         <div><a href="${updateLink}">Update</a>
 							|
